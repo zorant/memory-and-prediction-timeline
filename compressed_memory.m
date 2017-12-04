@@ -93,5 +93,5 @@ xlabel('Time')
 set(gcf,'color','w')
 
 % safe the figure
-%export_fig('small_and_big_t_tutorial.pdf')
-%saveas(gcf,'small_and_big_t_tutorial.fig')
+%export_fig('compressed_memory.pdf')
+%saveas(gcf,'compressed_memory.fig')
