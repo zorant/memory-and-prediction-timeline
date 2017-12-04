@@ -79,13 +79,13 @@ set(gca,'YTick',[])
 for i=1:5:buff_len % plot every 5th to make the figure look clean
     subplot(3,1,2)
     hold on, plot(t(i+k,:)) 
-    title('Intermediate layer - leaky integrators')
+    title('Intermediate layer - leaky integrators (only 10 shown for clarity out of 50 )')
 
     subplot(3,1,3)
     hold on, plot(T(i+k,:)) % T only makes sense between k+1 and end-k, 
         % since we're taking k-th spatial derivative, edges can not be
         % properly computed
-    title('Output layer - time cells')
+    title('Output layer - time cells (only 10 shown for clarity out of 50 )')
 end
 
 xlabel('Time')
@@ -93,5 +93,5 @@ xlabel('Time')
 set(gcf,'color','w')
 
 % safe the figure
-%export_fig('small_and_big_t_tutorial.pdf')
-%saveas(gcf,'small_and_big_t_tutorial.fig')
+export_fig('small_and_big_t_tutorial.pdf')
+saveas(gcf,'small_and_big_t_tutorial.fig')
