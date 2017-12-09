@@ -93,6 +93,6 @@ xlabel('Time')
 
 set(gcf,'color','w')
 
-% safe the figure
+% save the figure
 export_fig('compressed_memory.png')
 %saveas(gcf,'compressed_memory.fig')
