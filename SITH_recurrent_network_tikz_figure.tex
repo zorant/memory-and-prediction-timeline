@@ -1,0 +1,66 @@
+% Zoran Tiganj, Boston University, December 8, 2017
+% Two layer network for generating time cells following Shankar & Howard, Neural Computation, 2012
+% Latex code inspired by http://www.texample.net/tikz/examples/neural-network/
+
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\DeclareRobustCommand{\tstr}{\ensuremath{\overset{*}{\tau}}}
+\newcommand{\add}[2]{\dimexpr#1+#2\relax}
+
+
+\begin{document}
+\pagestyle{empty}
+
+\def\layersep{2.5cm}
+
+\begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
+    \tikzstyle{every pin edge}=[<-,shorten <=1pt]
+    \tikzstyle{neuron}=[circle,fill=black!25,minimum size=17pt,inner sep=0pt]
+    \tikzstyle{input neuron}=[neuron, fill=green!50];
+    \tikzstyle{output neuron}=[neuron, fill=red!50];
+    \tikzstyle{hidden neuron}=[neuron, fill=blue!50];
+    \tikzstyle{annot} = [text width=5em, text centered]
+
+    % Draw the hidded layer nodes
+    \foreach \name / \y in {1,...,5}
+        \node[input neuron] (H-\name) at (0,-\y) {};
+        
+     % Draw the input label
+     \node[annot,left of=H-3] (I) {Input};
+     
+     % Connect input and hidden
+     \foreach \source in {1,...,5}
+        \path (I) edge (H-\source);
+     
+     % Make the recurrent connection
+     \foreach \source in {1,...,5}
+        \draw [->] (H-\source.90) arc (0:264:2mm) node[pos=1.5,above left] {$\tstr_\source$} (H-\source);
+
+    % Draw the hidden layer nodes
+	\path[yshift=-1cm]
+            node[hidden neuron,pin={[pin edge={->}]right:$\tstr_2$}] (O-1) at (\layersep,-1 cm) {};
+     \path[yshift=-1cm]
+            node[hidden neuron,pin={[pin edge={->}]right:$\tstr_3$}] (O-2) at (\layersep,-2 cm) {};
+     \path[yshift=-1cm]
+            node[hidden neuron,pin={[pin edge={->}]right:$\tstr_4$}] (O-3) at (\layersep,-3 cm) {};
+            
+    % Connect hidded with output layer 
+     \path (H-1) edge (O-1);
+     \path (H-2) edge (O-1);
+     \path (H-3) edge (O-1);
+     \path (H-2) edge (O-2);
+     \path (H-3) edge (O-2);
+     \path (H-4) edge (O-2);
+     \path (H-3) edge (O-3);
+     \path (H-4) edge (O-3);
+     \path (H-5) edge (O-3);
+
+    % Annotate the layers
+    \node[annot,above of=H-1, node distance=1.5cm] (hl) {Leaky Integrators};
+    \node[annot,right of=hl, below of=hl, node distance=1.1cm] (l) {$\mathbf{L^{-1}_k}$};
+    \node[annot,above of=O-1, node distance=1cm] {Time cells};
+\end{tikzpicture}
+\end{document}
