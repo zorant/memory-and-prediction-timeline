@@ -8,4 +8,4 @@ The output figure illustrates how the input is compressed through a two-layer ne
 
 ![Compressed memory](https://github.com/zorant/memory-and-prediction-timeline/blob/master/compressed_memory.png)
 
-![Temporal associations with compressed memory](https://github.com/zorant/memory-and-prediction-timeline/blob/master/ M_heatmap.png)
+![Temporal associations with compressed memory](https://github.com/zorant/memory-and-prediction-timeline/blob/master/M_heatmap.png)
