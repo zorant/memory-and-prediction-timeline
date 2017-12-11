@@ -20,4 +20,14 @@ A major utility of having acess to a compressed timeline is the ability to creat
 
 ## Computing a prediction of the future as a scale-free log-compressed memory
 
-Probing the temporal associations tensor (M) with the present content of the memory timeline provides an estimate of future stimuli. This is also implemented in `compressed_memory_temporal_associations_prediction.m`. See `scale_free_prediction.mp4` for a video illustrating a simple example.
+Probing the temporal associations tensor (M) with the present content of the memory timeline provides an estimate of future stimuli. This is also implemented in `compressed_memory_temporal_associations_prediction.m`. See `scale_free_prediction.mp4` for a video illustrating a simple example with four sequentially activated stimuli. 
+
+## References 
+
+Shankar, K.H., and Howard, M.W. (2012). A scale-invariant internal representation of time. Neural Computation, 24, 134-193.
+
+Shankar, K.H. and Howard, M.W. (2013). Optimally fuzzy scale-free memory, Journal of Machine Learning Research, 14, 3753-3780.
+
+Howard, M.W., MacDonald, C.J., Tiganj, Z., Shankar, K.H., Du, Q., Hasselmo, M.E., and Eichenbaum, H. (2014). A unified mathematical framework for coding time, space, and sequences in the hippocampal region. Journal of Neuroscience, 34, 4692-4707.
+
+Tiganj, Z., Shankar, K. H. and Howard, M. W. (2017) Neural and computational arguments for memory as a compressed supported timeline. CogSci.
